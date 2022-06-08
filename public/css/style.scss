@@ -1,0 +1,371 @@
+@charset "utf-8";
+
+// -------------------- ここからスマホ --------------------
+// ==================================================
+//   共通
+// ==================================================
+body {
+    background-color: #FFF4E1;
+    color: #a09b9b;
+    font-size: 14px;
+}
+a {
+    transition: all 0.3s;
+    &:hover {
+        color: #E67A7A;
+    }
+}
+#text {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    width: 95%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span {
+        transition: all 300ms 0s ease;
+    }
+}
+#desc-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    width: 98%;
+    text-align: center;
+    color: #E67A7A;
+}
+.add-green {
+    color: #7EC2C2;
+    font-size: 0.6em;
+}
+#indication-btn {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 7px;
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+        background-color: #a09b9b;
+        color: #FFF4E1;
+    }
+}
+.no-indication {
+    display: none;
+}
+
+// ==================================================
+//   app.blade.php (ヘッダー＆フッター)
+// ==================================================
+header {
+    padding-right: 25px;
+    padding-left: 25px;
+    height: 65px;
+    background-color: #7EC2C2;
+    .h-wrap {
+        display: flex;
+        justify-content: space-between;
+        max-width: 650px;
+        margin: 0 auto;
+        color: #ffffff;
+        .h-left {
+            line-height: 65px;
+            font-weight: bold;
+        }
+        .h-right {
+            text-align: center;
+            line-height: 65px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-evenly;
+            width: 170px;
+            .h-item {
+                p {
+                    padding-bottom: 5px;
+                }
+                a {
+                    transition: all 0.3s;
+                    &:hover {
+                        color: #E67A7A;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    position: relative;
+    height: calc(100vh - 65px);
+    // ==================================================
+    //   welcome.blade.php (TOPページメイン)
+    // ==================================================
+    .welcome-wrap {
+        max-width: 650px;
+        margin: 0 auto;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .main-title {
+            text-align: center;
+            font-size: 38px;
+            line-height: 1.4em;
+            padding-bottom: 100px;
+            color: #9DDCDC;
+            text-shadow: 4px 2px 2px #dedede;
+        }
+        .desc-wrap {
+            display: flex;
+            justify-content: space-between;
+            .description {
+                a {
+                    border: 1px solid #E67A7A;
+                    color: #E67A7A;
+                    padding: 10px;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    transition: all 0.3s;
+                    &:hover {
+                        background-color: #E67A7A;
+                        color: #FFF4E1;
+                    }
+                }
+            }
+        }
+    }
+
+    // ==================================================
+    //   login.blade.php (ログイン画面)
+    // ==================================================
+    .auth-wrap {
+        height: 100%;
+        .login-wrap {
+            height: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .login-inner-wrap {
+                .login-title {
+                    padding: 20px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                .form-body {
+                    .form-group {
+                        margin-bottom: 20px;
+                        .input-wrap {
+                            input {
+                                border: 1px solid #a09b9b;
+                                padding: 7px;
+                                margin-top: 5px;
+                                width: 100%;
+                                border-radius: 7px;
+                            }
+                        }
+                    }
+                    .login-btn-wrap {
+                        display: flex;
+                        justify-content: space-evenly;
+                        margin-top: 35px;
+                        font-size: 17px;
+                        button, a {
+                            border: 1px solid #E67A7A;
+                            color: #E67A7A;
+                            padding: 10px 15px;
+                            border-radius: 7px;
+                            transition: all 0.3s;
+                            &:hover {
+                                background-color: #E67A7A;
+                                color: #FFF4E1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ==================================================
+    //   home.blade.php (ジャンル選択)
+    // ==================================================
+    .container {
+        .home-title-wrap {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #847F7D;
+            height: 65px;
+            text-align: center;
+            color: #fff;
+            .home-title {
+                line-height: 65px;
+                font-size: 23px;
+            }
+            .title-back {
+                border: 1px solid #ffffff;
+                display: inline-block;
+                height: 30px;
+                padding: 0 10px;
+                line-height: 30px;
+                background-color: #ffffff;
+                color: #847F7D;
+                border-radius: 10px;
+                transition: all 0.3s;
+                &:hover {
+                    background-color: #847F7D;
+                    color: #ffffff;
+                }
+            }
+        }
+        .text-wrap {
+            font-weight: normal;
+            font-size: 15px;
+            padding: 30px 0;
+            .link-text {
+                height: 50px;
+                line-height: 50px;
+                width: 85%;
+                margin: 0 auto;
+                a {
+                    display: block;
+                    border-bottom: 1px solid;
+                    height: 45px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+// -------------------- ここからタブレット(768px以上) --------------------
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+        main {
+            // ==================================================
+            //   welcome.blade.php (TOPページメイン)
+            // ==================================================
+            .welcome-wrap {
+                .main-title {
+                    font-size: 50px;
+                }
+                .desc-wrap {
+                    .description {
+                        a {
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+
+            // ==================================================
+            //   home.blade.php (ジャンル選択)
+            // ==================================================
+            .container {
+                .home-title {
+                    font-size: 35px;
+                }
+            }
+
+            // ==================================================
+            //   typing.blade.php (タイピングページ)
+            // ==================================================
+            .container {
+                .text-wrap {
+                    #text {
+                        font-size: 57px;
+                    }
+                    #desc-text {
+                        font-size: 35px;
+                        top: 60%;
+                    }
+                }
+            }
+        }
+    }
+    #indication-btn {
+        left: 65%;
+    }
+}
+
+// -------------------- ここからPC(1024px以上) --------------------
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 18px;
+
+        // ==================================================
+        //   app.blade.php (ヘッダー＆フッター)
+        // ==================================================
+        header {
+            .h-wrap {
+                max-width: 950px;
+            }
+        }
+
+        main {
+            // ==================================================
+            //   welcome.blade.php (TOPページメイン)
+            // ==================================================
+            .welcome-wrap {
+                .main-title {
+                    font-size: 73px;
+                    padding-bottom: 150px;
+                }
+                .desc-wrap {
+                    justify-content: space-around;
+                    .description {
+                        a {
+                            font-size: 21px;
+                            padding: 14px 21px;
+                        }
+                    }
+                }
+            }
+            // ==================================================
+            //   home.blade.php (ジャンル選択)
+            // ==================================================
+            .container {
+                .home-title-wrap {
+                    .title-back {
+                        font-size: 14px;
+                    }
+                }
+                .text-wrap {
+                    max-width: 750px;
+                    margin: 0 auto;
+                    padding: 50px 0;
+                }
+            }
+
+            // ==================================================
+            //   typing.blade.php (タイピングページ)
+            // ==================================================
+            .container {
+                .text-wrap {
+                    #text {
+                        font-size: 65px;
+                        top: 45%;
+                    }
+                    #desc-text {
+                        font-size: 46px;
+                        top: 67%;
+                    }
+                }
+            }
+        }
+    }
+    #indication-btn {
+        top: 85%;
+    }
+}
